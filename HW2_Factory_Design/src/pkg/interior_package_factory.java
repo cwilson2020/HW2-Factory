@@ -20,6 +20,9 @@ public class interior_package_factory {
 		case 3: temp = new Interior_pkg3();
 		break; 
 
+		case 4: temp = new Interior_pkg4();
+		break; 
+
 		default: temp = new Interior_pkg1();
 
 		

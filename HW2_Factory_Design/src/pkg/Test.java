@@ -12,7 +12,7 @@ public class Test {
 
 		interior_package pkg = null;
 
-
+		Scanner userInput = new Scanner(System.in);
 
 		boolean exit = false;
 
@@ -23,27 +23,31 @@ public class Test {
 			System.out.println("2) Trim Package 2");
 			System.out.println("3) Trim Package 3");
 			System.out.println("4) Trim Package 4");
-			System.out.println("Press 'e' to exit");
-			Scanner userInput = new Scanner(System.in);
+			System.out.println("e) Exit");
+
 			String sInput = userInput.nextLine();
-			userInput.close();
+
 
 			if (sInput.equals("e")) {
 				exit = true;
-				System.out.println("program Terminated");
+				System.out.println("Program Terminated");
 			}
 
 
 			if (!exit ) {
 				try {		
 					int iInput = Integer.valueOf(sInput);
-					System.out.println(iInput);
+					//System.out.println(iInput);
 					if ((iInput<=4) && (iInput >=1 )) {						
 						pkg = fac_pkg.createInterior(iInput);
+						System.out.println("\n--------Package Information--------");
 						System.out.println(pkg.getTrim());
-						System.out.println(pkg.getContentsList());
-						System.out.println(pkg.getPrice());
+						System.out.println("This Trim Level Contains: " + pkg.getContentsList());
+						System.out.println("Package Price:$" +pkg.getPrice());
+						System.out.println("\n\n\n");
 					}
+					else
+						System.out.println("That Package Doesn't exist, please Select another Package.");
 
 				}
 				catch (NumberFormatException ex) {
